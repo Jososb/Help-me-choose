@@ -1,0 +1,62 @@
+body
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 250px;
+  color: white;
+  font-family: monospace;
+  background-image: linear-gradient(pink, lightblue);
+
+}
+
+h1
+{
+  font-weight: lighter;
+  font-size: 60px;
+  letter-spacing: 2px;
+  margin-bottom: 0px;
+}
+
+.inputSection
+{
+  margin: 50px 0px 80px 0px; /*kan även skriva 50px 0px och då reperteras det två gånger medsols, top-right-buttom-left*/
+  width: 400px;
+}
+
+.inputs
+{
+  width: inherit; /*Kopierar inputSections blockstorlek i bredd*/
+  display: flex;
+  flex-direction: column;
+}
+
+input
+{
+margin-top: 10px;
+background-color: white;
+color: pink;
+font-size: 20px
+}
+
+.addOption
+{
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+  font-style: italic;
+  font-size: 30px;
+  font-family:monospace;
+  font-variant-caps: petite-caps;
+  color: white;
+  background-color: black;
+}
+
+.goOption
+{
+  font-size: 30px;
+  font-family: monospace;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+}
