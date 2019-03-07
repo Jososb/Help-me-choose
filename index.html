@@ -5,8 +5,8 @@
     <title>Help med choose</title>
     <link href="./main.css" rel="stylesheet" type="text/css">
   </head>
-  <body class="bodyColor">
-    <h1 class="header">Help me choose between...</h1>
+  <body>
+    <h1>Help me choose between...</h1>
     <div class="inputSection">
       <div class="inputs">
         <input placeholder="Something"> </input>
@@ -14,20 +14,30 @@
       <button class="addOption">Add</button>
     </div>
     <div class="resultSection"></div>
-    <button class="goOption">Go!</button>
+    <button class="submit">Go!</button>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script>
-      $(function()
-      {
+      $(function() {
         $('.resultSection').hide()/*hide=gömmer resultat som matas in*/
 
-        var add_option = function()
-        {
+        var add_option = function() {
           $('.inputs').append('<input></input>') /*append=lägger till ett till inputelement*/
         }
         $('.addOption').click(add_option) /*click=när klick görs på knappen adderas en till/körs add_option*/
 
+        var options = []
+        var submit = function() {
+          $('.inputSection').hide()
+          $('.resultSection').css('display' , 'flex')
+          $('input').each(function(){
+            options.push($(this).val())
+          })
+          var winner = options[Math.floor(Math.random() * options.length)]
+          console.log(winner) /*--> för att kontrollera och kolla vilken som slumpas fram*/
+          $('.resultSection').text(winner)
+        }
+        $('.submit').click(submit)
       })
     </script>
   </body>
